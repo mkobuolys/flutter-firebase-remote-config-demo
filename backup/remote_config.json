@@ -1,0 +1,90 @@
+{
+  "conditions": [
+    {
+      "name": "Android",
+      "expression": "device.os == 'android'",
+      "tagColor": "LIME"
+    },
+    {
+      "name": "Event LIVE",
+      "expression": "dateTime >= dateTime('2023-01-25T09:30:00', 'Etc/GMT-8') && dateTime < dateTime('2023-01-25T16:00:00', 'Etc/GMT-8')",
+      "tagColor": "PINK"
+    },
+    {
+      "name": "10% of users",
+      "expression": "percent <= 10",
+      "tagColor": "BLUE"
+    }
+  ],
+  "parameters": {
+    "app_version": {
+      "defaultValue": {
+        "value": "{\"version\":\"1.0.0\",\"build_number\":1,\"is_optional\":true}"
+      },
+      "conditionalValues": {
+        "Android": {
+          "value": "{\"version\":\"1.0.0\",\"build_number\":1,\"is_optional\":true}"
+        }
+      },
+      "description": "Preferred application version.",
+      "valueType": "JSON"
+    },
+    "event_info": {
+      "defaultValue": {
+        "value": "{\"title\":\"Flutter Forward\",\"startsAt\":\"2023-01-25T09:00:00.000\",\"sessions\":[{\"id\":\"whats-new-in-flutter\",\"color\":\"0xFFFEF752\",\"title\":\"What's new in Flutter\",\"dateTimeFrom\":\"2023-01-25T09:00:00.000-08:00\",\"dateTimeTo\":\"2023-01-25T10:00:00.000-08:00\",\"speakers\":[\"Tim Sneath\"]},{\"id\":\"flutter-plus-firebase-is-love\",\"color\":\"0xFF9D6BCE\",\"title\":\"Flutter + Firebase = 💙💛\",\"dateTimeFrom\":\"2023-01-25T10:00:00.000-08:00\",\"dateTimeTo\":\"2023-01-25T11:00:00.000-08:00\",\"speakers\":[\"Frank van Puffelen\",\"David East\"]},{\"id\":\"how-to-get-a-free-dash\",\"color\":\"0xFFBCEF4B\",\"title\":\"How to get a free Dash?!\",\"dateTimeFrom\":\"2023-01-25T11:00:00.000-08:00\",\"dateTimeTo\":\"2023-01-25T12:00:00.000-08:00\",\"speakers\":[\"Nilay Yener\"]},{\"id\":\"lunch-break\",\"color\":\"0xFFFEF752\",\"title\":\"Lunch break\",\"dateTimeFrom\":\"2023-01-25T12:00:00.000-08:00\",\"dateTimeTo\":\"2023-01-25T13:00:00.000-08:00\",\"speakers\":[]},{\"id\":\"state-management-in-flutter-is-easy\",\"color\":\"0xFF9D6BCE\",\"title\":\"State management in Flutter is easy!\",\"dateTimeFrom\":\"2023-01-25T13:00:00.000-08:00\",\"dateTimeTo\":\"2023-01-25T14:00:00.000-08:00\",\"speakers\":[\"Craig Labenz\"]},{\"id\":\"using-patterns-in-dart\",\"color\":\"0xFFBCEF4B\",\"title\":\"Using the new patterns in Dart\",\"dateTimeFrom\":\"2023-01-25T14:00:00.000-08:00\",\"dateTimeTo\":\"2023-01-25T15:00:00.000-08:00\",\"speakers\":[\"Michael Thomsen\"]},{\"id\":\"panel-discussion\",\"color\":\"0xFFFEF752\",\"title\":\"Panel discussion\",\"dateTimeFrom\":\"2023-01-25T15:00:00.000-08:00\",\"dateTimeTo\":\"2023-01-25T16:00:00.000-08:00\",\"speakers\":[\"Tim Sneath\",\"Craig Labenz\",\"Michael Thomsen\"]}]}"
+      },
+      "description": "Event information JSON.",
+      "valueType": "JSON"
+    }
+  },
+  "parameterGroups": {
+    "Event stream": {
+      "description": "Event stream properties.",
+      "parameters": {
+        "stream_link": {
+          "defaultValue": {
+            "value": "https://www.youtube.com/@flutterdev"
+          },
+          "description": "Event stream link.",
+          "valueType": "STRING"
+        },
+        "stream_live": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "conditionalValues": {
+            "Event LIVE": {
+              "value": "true"
+            }
+          },
+          "description": "Is event stream LIVE.",
+          "valueType": "BOOLEAN"
+        }
+      }
+    },
+    "Add to favorites": {
+      "description": "Add to favorites feature properties.",
+      "parameters": {
+        "favorite_button_type": {
+          "defaultValue": {
+            "value": "card"
+          },
+          "conditionalValues": {
+            "10% of users": {
+              "value": "slideable"
+            }
+          },
+          "description": "Type of \"add to favorites\" button.",
+          "valueType": "STRING"
+        },
+        "favorites_enabled": {
+          "defaultValue": {
+            "value": "true"
+          },
+          "description": "Enables \"add to favorites\" action.",
+          "valueType": "BOOLEAN"
+        }
+      }
+    }
+  }
+}
