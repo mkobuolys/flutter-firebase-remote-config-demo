@@ -9,7 +9,7 @@ A Flutter Forward agenda app that covers multiple Firebase Remote Config feature
 3. Feature flags and staged rollouts;
 4. A/B testing.
 
-Check the video tutorial on [YouTube](https://youtu.be/l_-eAINdz90).
+Check the video tutorial on [YouTube](https://youtu.be/1qHSvGoqqiE).
 
 ## Building
 
@@ -21,7 +21,7 @@ If you are new to Flutter, please first follow the [Flutter Setup](https://flutt
 
 ### Building and installing the app
 
-The easiest way to get started is by cloning the repository and following the video tutorial on [YouTube](https://youtu.be/l_-eAINdz90).
+The easiest way to get started is by cloning the repository and following the video tutorial on [YouTube](https://youtu.be/1qHSvGoqqiE).
 
 Create a new Firebase project and import the Firebase Remote Config configuration file `remote_config.json` from the `backup` directory.
 
