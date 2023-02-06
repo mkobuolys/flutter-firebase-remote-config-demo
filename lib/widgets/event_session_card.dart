@@ -99,7 +99,7 @@ class _CardContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textColor = Theme.of(context).backgroundColor;
+    final textColor = Theme.of(context).colorScheme.background;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -194,7 +194,7 @@ class _TimeIndicator extends StatelessWidget {
             height: 16.0,
             width: 1.0,
             margin: const EdgeInsets.symmetric(vertical: 4.0),
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
           ),
           _TimeColumn(dateTimeTo),
         ],
@@ -210,7 +210,7 @@ class _TimeColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textColor = Theme.of(context).backgroundColor;
+    final textColor = Theme.of(context).colorScheme.background;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,

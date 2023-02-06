@@ -41,8 +41,10 @@ class App extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Flutter Firebase Remote Config Demo',
       routerConfig: router,
-      theme: ThemeData.dark(useMaterial3: true).copyWith(
-        backgroundColor: backgroundColor,
+      theme: ThemeData.from(
+        colorScheme: const ColorScheme.dark(background: backgroundColor),
+        useMaterial3: true,
+      ).copyWith(
         scaffoldBackgroundColor: backgroundColor,
         typography: Typography.material2021(),
         appBarTheme: const AppBarTheme(
